@@ -39,6 +39,16 @@ class MainActivity : AppCompatActivity() {
     //проверка полей на соответствие
     private fun checkErrorsInLoginAndPasswordEditText(): Boolean {
 
+        /*if(TextUtils.isEmpty(loginText.text) || TextUtils. ){
+            loginText.error = "Enter you login!"
+            return false
+        }
+
+        if(TextUtils.isEmpty(passwordText.text) || TextUtils.equals(passwordText.text, password.password) ){
+            passwordText.error = "Enter you login!"
+            return false
+        }*/
+
         if (loginText.text.toString() != login.login) {
             loginText.error = "Enter you login!"
             return false
