@@ -16,8 +16,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var registerBtn: Button
     private lateinit var loginBtn: Button
 
-    private val login = "admin"
-    private val password = "password"
+    /*private val login = "admin"
+      private val password = "password"*/
+
+    private val login = Login("admin")
+    private val password = Password("password")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,14 +36,15 @@ class MainActivity : AppCompatActivity() {
         loginBtn = findViewById(R.id.logBtn)
     }
 
+    //проверка полей на соответствие
     private fun checkErrorsInLoginAndPasswordEditText(): Boolean {
 
-        if (loginText.text.toString() != login) {
+        if (loginText.text.toString() != login.login) {
             loginText.error = "Enter you login!"
             return false
         }
 
-        if (passwordText.text.toString() != password) {
+        if (passwordText.text.toString() != password.password) {
             passwordText.error = "Enter you password!"
             return false
         }
@@ -60,6 +64,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //вывод тоста
     private fun inputCheck(){
         if (checkErrorsInLoginAndPasswordEditText()) {
             Toast.makeText(this, "You do it!!", Toast.LENGTH_SHORT).show()
