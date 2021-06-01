@@ -12,7 +12,7 @@ import androidx.core.widget.addTextChangedListener
 import org.w3c.dom.Text
 import android.text.TextWatcher as TextWatcher
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
 
     private lateinit var loginText: EditText
     private lateinit var passwordText: EditText
@@ -96,15 +96,15 @@ class MainActivity : AppCompatActivity(){
     }
 
     //изменение текста и включение кнопки для нажатия
-    private fun check(){
-        loginText.addTextChangedListener(object : TextWatcher{
+    private fun check() {
+        loginText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 registerBtn.isEnabled = true
                 loginBtn.isEnabled = true
-                if (TextUtils.isEmpty(loginText.text) || TextUtils.isEmpty(passwordText.text)){
+                if (TextUtils.isEmpty(loginText.text) || TextUtils.isEmpty(passwordText.text)) {
                     loginBtn.isEnabled = false
                     registerBtn.isEnabled = false
                 }
@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity(){
 
         })
 
-        passwordText.addTextChangedListener(object : TextWatcher{
+        passwordText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
